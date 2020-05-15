@@ -24,7 +24,9 @@ Vue.component('product', {
         </div>
   
         <div class="product-info">
-            <h1>{{ product }}</h1>
+            <h1>{{ product }} </h1>
+            <h2 v-if="inStock">{{ price }}</h2>
+            <h2 v-else>Priceless!</h2>
             <p v-if="inStock">In Stock</p>
             <p v-else>Out of Stock</p>
             <p>Shipping: {{ shipping }}</p>
@@ -51,44 +53,30 @@ Vue.component('product', {
             Add to cart
             </button>
 
-
-            <button type="button" data-toggle="collapse" data-target="#review" aria-expanded="false" aria-controls="collapseExample">
-            write review
-          </button>
-  
          </div> 
 
-          <div>
-              <p v-if="!reviews.length">There are no reviews yet.</p>
-              <ul v-else>
-                  <li v-for="(review, index) in reviews" :key="index">
-                    <p>{{ review.name }}</p>
-                    <p>Rating:{{ review.rating }}</p>
-                    <p>{{ review.review }}</p>
-                  </li>
-              </ul>
-          </div>
-         
-         <product-review @review-submitted="addReview"></product-review>
+      
       
       </div>
      `,
     data() {
         return {
-            product: 'Socks',
+            product: 'Mug',
+            price: '$15',
             selectedVariant: 0,
-            details: ['80% cotton', '20% polyester', 'Gender-neutral'],
-            sizes: ['Small', 'Medium', 'Large'],
+            details: ['100% China', '100% Mother inlaw offensive', 'Made in the UK'],
             variants: [{
                     variantId: 2234,
-                    variantColor: 'green',
-                    variantImage: '/images/jdleins.jpg',
+                    variantName: 'father',
+                    variantColor: 'blue',
+                    variantImage: 'images/father.jpg',
                     variantQuantity: 10
                 },
                 {
                     variantId: 2235,
-                    variantColor: 'blue',
-                    variantImage: '/images/mrshacklett.jpg',
+                    variantName: 'mother',
+                    variantColor: 'pink',
+                    variantImage: 'images/mother.jpg',
                     variantQuantity: 0
                 }
             ],
