@@ -1,4 +1,4 @@
 # vue_opa
 
-![screenshot](mug.png)
+![mug](mug.png)
 vue one page application using bootstrap 4
