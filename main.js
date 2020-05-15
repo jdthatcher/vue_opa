@@ -6,7 +6,7 @@ Vue.component('navbar', {
 })
 Vue.component('footer2', {
     template: `
-    <div class="nav-bar"><div class="nav-brand"> thatcher@comsynth.com // 615 943 2197 </div></div>
+    <div class="nav-bar"><div> thatcher@comsynth.com // 615 943 2197 </div></div>
      `,
 })
 Vue.component('product', {
